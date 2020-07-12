@@ -2,6 +2,7 @@ import { createStore, combineReducers, applyMiddleware } from 'redux'
 import { reducer as form } from 'redux-form';
 import createSagaMiddleware from 'redux-saga';
 import initSagaFunctions from './Saga/SagaInitializer';
+import { reducerClub } from './ClubStore';
 
 const sessionReducer = (state = null, action) => {
     switch(action.type){
@@ -17,6 +18,7 @@ const sessionReducer = (state = null, action) => {
 }
 
 const reducers = combineReducers({
+    reducerClub,
     sessionReducer,
     form
 })

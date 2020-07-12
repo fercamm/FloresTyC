@@ -15,7 +15,7 @@ const loginFirebase = values => autenticacion
     .signInWithEmailAndPassword(values.email, values.password)
     .then(success => success)
 
-function* registrarUsuario(values){
+export function* registrarUsuario(values){
     try{
         const registro = yield call(registroFirebase, values.datos);
         const uid = registro.user.uid;
@@ -27,7 +27,7 @@ function* registrarUsuario(values){
     }
 }
 
-function* loginUsuario(values){
+export function* loginUsuario(values){
     try{
         const login = yield call(loginFirebase, values.datos);
         const uid = login.user.uid;
@@ -42,6 +42,3 @@ function* loginUsuario(values){
         console.log(error);
     }
 }
-
-export default registrarUsuario
-export default loginUsuario

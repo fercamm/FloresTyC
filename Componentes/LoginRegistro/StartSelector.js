@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { autenticacion } from '../../Store/Servicios/Firebase';
 import TabStackLoginRegistro from './TabStackLoginRegistro';
-import ExampleWelcome from '../ExampleWelcome/ExampleWelcome';
+import TabStackMenu from '../Menu/TabStackMenu';
 
 class StartSelector extends Component {
     componentDidMount(){
@@ -11,7 +11,7 @@ class StartSelector extends Component {
 
     render() {
         return (
-            this.props.usuario ? <ExampleWelcome/> : <TabStackLoginRegistro/>
+            this.props.usuario ? <TabStackMenu/> : <TabStackLoginRegistro/>
         )
     }
 }
